@@ -1,0 +1,26 @@
+{
+  "name": "nixhomepage",
+  "version": "1.0.0",
+  "description": "Personal simple homepage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gulp",
+    "debug": "gulp debug"
+  },
+  "author": "nixgnauhcuy <nixgnauhcuy@gmail.com> (https://www.nixgnauhcuy.cn/)",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "del": "^4.1.1",
+    "gulp": "^5.0.0",
+    "gulp-css": "^0.1.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.77.6"
+  }
+}

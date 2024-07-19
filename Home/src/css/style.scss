@@ -1,0 +1,482 @@
+//html, body {
+//  height: 100%;
+//  margin: 0;
+//  padding: 0;
+//  //overflow: hidden; /* 隐藏滚动条 */
+//}
+
+body {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  font-family: Roboto;
+  color: var(--base-font-color);
+  background-color: var(--base-background-color);
+  margin-top: 100px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+main {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-left {
+  height: 100vh;
+  overflow-y: scroll;
+  width: 40%;
+  display: flex;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-left::-webkit-scrollbar {
+  display: none;
+}
+
+.main-left .card {
+  margin-top: 10px;
+  padding: 15px;
+  background: var(--base-card-color);
+  border-radius: 10px;
+  text-align: left;
+  width: 80%;
+  position: relative;
+}
+
+.main-left .card#author {
+  background: none;
+}
+
+.main-left .card#author img {
+  border-radius: 50%;
+  width: 85%;
+  display: block;
+  margin: auto;
+}
+
+.main-left .card#author .author-tag1,
+.main-left .card#author .author-tag2 {
+  position: absolute;
+  background: var(--base-card-color);
+  padding: 5px 10px;
+  border-radius: 40px;
+  animation: float 2s infinite;
+}
+.main-left .card#author .author-tag1 {
+  right: 0px;
+  bottom: 45px;
+}
+
+.main-left .card#author .author-tag2 {
+  right: 10px;
+  bottom: 10px;
+}
+
+.main-left .card#author-aboutme {
+  background: none;
+  padding: 0px;
+  margin-top: -30px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.main-left .card#author-info,
+.main-left .card#card-wechat {
+  border: var(--style-border);
+}
+
+.main-left .card#author-info p {
+  margin: 5px 0;
+}
+
+.main-left .card#card-wechat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000;
+  background-color: var(--card-wechar-background-color);
+}
+
+.main-left .card#card-wechat:hover .flip-content {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.main-left .card#card-wechat .flip-content {
+  width: 240px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: cubic-bezier(0, 0, 0, 1.29) 1.2s;
+}
+
+.main-left .card#card-wechat .flip-content .front,
+.main-left .card#card-wechat .flip-content .back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.main-left .card#card-wechat .flip-content .back {
+  transform: rotateY(180deg);
+}
+
+.main-right {
+  width: calc(100% - 200px);
+  padding: 0 15px;
+  position: relative;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-right .title {
+  font-size: 50px;
+}
+
+.main-right .subtitle {
+  font-size: 60px;
+}
+
+.main-right .social-icons {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.main-right .social-icons a {
+  text-decoration: none;
+}
+
+.main-right .social-icon,
+.main-right .blog-archives-section .timeline,
+.main-right .github-cards .card {
+  border: var(--style-border);
+}
+
+.main-right .social-icon {
+  width: 40px;
+  height: 35px;
+  border-radius: 10px;
+  display: flex;
+  margin-left: 10px;
+  background: var(--social-icon-color);
+  align-items: center;
+  justify-content: center;
+  transition: all 1s
+  linear(
+                  0 0%,
+                  0 2.27%,
+                  0.02 4.53%,
+                  0.04 6.8%,
+                  0.06 9.07%,
+                  0.1 11.33%,
+                  0.14 13.6%,
+                  0.25 18.15%,
+                  0.39 22.7%,
+                  0.56 27.25%,
+                  0.77 31.8%,
+                  1 36.35%,
+                  0.89 40.9%,
+                  0.85 43.18%,
+                  0.81 45.45%,
+                  0.79 47.72%,
+                  0.77 50%,
+                  0.75 52.27%,
+                  0.75 54.55%,
+                  0.75 56.82%,
+                  0.77 59.1%,
+                  0.79 61.38%,
+                  0.81 63.65%,
+                  0.85 65.93%,
+                  0.89 68.2%,
+                  1 72.7%,
+                  0.97 74.98%,
+                  0.95 77.25%,
+                  0.94 79.53%,
+                  0.94 81.8%,
+                  0.94 84.08%,
+                  0.95 86.35%,
+                  0.97 88.63%,
+                  1 90.9%,
+                  0.99 93.18%,
+                  0.98 95.45%,
+                  0.99 97.73%,
+                  1 100%
+  );
+}
+
+.main-right .social-icon:hover {
+  width: 80px;
+}
+
+.iconfont {
+  font-size: 30px;
+  color: var(--base-background-color);
+  display: block;
+  margin: auto;
+}
+
+.main-right .blog-archives-section .timeline {
+  overflow-y: scroll;
+  height: 170px;
+  width: 80%;
+  background: var(--base-card-color);
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.main-right .blog-archives-section .timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.main-right .blog-archives-section .timeline .timeline-item {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.main-right .blog-archives-section .timeline .timeline-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 1px solid #999;
+  border-radius: 50%;
+  position: absolute;
+  left: -2px;
+  top: 8px;
+}
+
+.main-right .blog-archives-section .timeline .timeline-item a {
+  text-decoration: none;
+}
+
+.main-right .blog-archives-section .timeline .timeline-item a h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #999;
+}
+
+.main-right .blog-archives-section .timeline .timeline-item a p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #999;
+}
+
+.main-right .github-cards {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.main-right .github-cards .card {
+  height: 100px;
+  background: var(--base-card-color);
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s;
+  overflow: auto;
+}
+
+.main-right .github-cards .card::-webkit-scrollbar {
+  display: none;
+}
+
+.main-right .github-cards .card a {
+  text-decoration: none;
+}
+
+.main-right .github-cards .card:hover {
+  transform: translateY(-5px);
+}
+
+.main-right .github-cards .card-title {
+  font-size: 18px;
+  color: var(--base-font-color);
+  margin-bottom: 10px;
+}
+
+.main-right .github-cards .card-description {
+  font-size: 14px;
+  color: #999;
+}
+
+.main-right .github-snake-img {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+.main-right #mode-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  background: var(--base-card-color);
+  border-radius: 10px;
+}
+
+.main-right #mode-btn i {
+  font-size: 16px;
+  color: var(--base-font-color);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+@media (max-width: 1024px) {
+  html, body {
+    overflow: auto; /* 移动端允许滚动 */
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .main-left,
+  .main-right {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    position: relative;
+  }
+
+  .main-left .card#author .author-tag1 {
+    bottom: 75px;
+  }
+
+  .main-left .card#author .author-tag2 {
+    bottom: 10px;
+  }
+
+  .main-left .card#author-aboutme {
+    font-size: 50px;
+  }
+
+  .main-right .title {
+    font-size: 50px;
+  }
+
+  .main-right .subtitle {
+    font-size: 60px;
+  }
+
+  .main-right .social-icons {
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .main-right .blog-archives-section .timeline,
+  .main-right .github-cards,
+  .main-right .github-snake-img {
+    margin: auto;
+  }
+
+  .main-right .blog-archives-section .timeline {
+    text-align: left;
+  }
+
+  .main-right .blog-archives-section .timeline .timeline-item::before {
+    width: 10px;
+    height: 10px;
+    left: -2px;
+    top: 10px;
+  }
+
+  .main-right .blog-archives-section .timeline .timeline-item a h3 {
+    font-size: 25px;
+  }
+
+  .main-right .blog-archives-section .timeline .timeline-item a p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    font-size: 15px;
+  }
+
+  .main-left,
+  .main-right {
+    padding: 10px;
+  }
+
+  .main-left .card#author .author-tag1 {
+    bottom: 55px;
+  }
+
+  .main-left .card#author .author-tag2 {
+    bottom: 15px;
+  }
+
+  .main-left .card#author-aboutme {
+    font-size: 25px;
+  }
+
+  .main-right .title {
+    font-size: 25px;
+  }
+
+  .main-right .subtitle {
+    font-size: 30px;
+  }
+
+  .main-right .social-icons {
+    margin-top: 10px;
+  }
+
+  .main-right .blog-archives-section .timeline .timeline-item::before {
+    width: 5px;
+    height: 5px;
+    left: 5px;
+    top: 7px;
+  }
+
+  .main-right .blog-archives-section .timeline .timeline-item a h3 {
+    font-size: 15px;
+  }
+
+  .main-right .blog-archives-section .timeline .timeline-item a p {
+    font-size: 10px;
+  }
+}
