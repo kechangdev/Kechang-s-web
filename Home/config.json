@@ -56,8 +56,8 @@
         "back_img": ""
       },
       "card_author_infos": [
-        "📫 kechang.dev@gmail.com",
-        "🏠 Sichuan, China",
+        "📫 S3843003@students.fscj.edu",
+        "🏠 Florida, United States",
         "💼 A Student."
       ]
     },
@@ -132,6 +132,11 @@
             "url": "https://qinglong.kechang.uk"
           },
           {
+            "name": "Kechang's Chat",
+            "description": "Chat with AI for help and fun!",
+            "url": "https://chat.kechang.uk"
+          },
+          {
             "name": "Kechang's YOURLS",
             "description": "Shrink those URLs!",
             "url": "https://url.kechang.uk/admin"
@@ -145,6 +150,11 @@
             "name": "Kechang's Status",
             "description": "How are my servers doing?",
             "url": "https://status.kechang.uk"
+          },
+          {
+            "name": "Kechang's API",
+            "description": "AI-powered API for Kechang's Chat.",
+            "url": "https://api.kechang.uk"
           }
         ]
       },
